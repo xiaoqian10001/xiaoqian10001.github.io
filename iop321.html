@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+    <title>xqian.pw</title>
+    <link rel="stylesheet" href="https://g.alicdn.com/apsara-media-box/imp-web-player/2.16.3/skins/default/aliplayer-min.css" />
+    <script charset="utf-8" type="text/javascript" src="https://g.alicdn.com/apsara-media-box/imp-web-player/2.16.3/aliplayer-min.js"></script>
+    <style>
+        body, html {
+            width: 100%;
+            height: 100%;
+            background: rgb(0, 0, 0);
+            padding: 0;
+            margin: 0;
+            overflow-x: hidden;
+            overflow-y: hidden;
+        }
+        * {
+            margin: 0;
+            border: 0;
+            padding: 0;
+            text-decoration: none;
+        }
+        #player-con {
+            position: inherit;
+            height: 95%;
+            position:absolute;
+            top:0;
+        }
+        #dibu {
+            width: 100%;
+            height: 50px;
+            background-color: #4d4dbb;
+            position: fixed;
+            bottom: 0;
+            text-align: center;
+        }
+        #tzan {
+            width: 100%;
+            height: 100%;
+            background-color: #3636ab;
+            color: white;
+            font-size: 24px;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+<div class="prism-player" id="J_prismPlayer"></div>
+<script>
+    function getParameterByName(name, url) {
+        if (!url) url = window.location.href;
+        name = name.replace(/[[\]]/g, '\\$&');
+        var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, ' '));
+    }
+    function encryptVideoUrl(url) {
+        return btoa(url);
+    }
+    var videoUrlParam = getParameterByName('t');
+    var decryptedVideoUrl = atob(videoUrlParam);
+    var player = new Aliplayer({
+        id: 'J_prismPlayer',
+        source: decryptedVideoUrl,
+        width: '100%',
+        height: '300px',
+        autoplay: true
+    });
+</script>
+<div id='dibu'>
+    <a href="https://q.xqian.pw">
+        <button id='tzan'>点击这里跳转</button>
+    </a>
+</div>
+</body>
+</html>
