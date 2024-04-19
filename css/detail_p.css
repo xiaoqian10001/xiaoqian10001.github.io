@@ -897,13 +897,20 @@ a {
 	font-size:20px;
 	}
 #ztbf{margin-left:30px;margin-right:30px;}
-.voicep{
-	width:154px;
-	height:24px;
-	float:left;
-	overflow:hidden;
-	position:relative;
-	}
+.videos {
+	display: flex;
+	justify-content: center;
+	align-items: center; 
+	position: relative;
+}
+
+.voicep {
+	width: 154px;
+	height: 24px;
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+}
 #vBar{
 	width:154px;
 	height:6px;
