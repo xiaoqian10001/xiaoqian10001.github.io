@@ -2,7 +2,7 @@ var vids=document.getElementById("vids");
 var sskd=$(".controls").width();
 function getBase64EncodedVideoUrlFromURL() {
 	const urlParams = new URLSearchParams(window.location.search);
-	const base64EncodedVideoUrl = urlParams.get('video');
+	const base64EncodedVideoUrl = urlParams.get('s');
 	return base64EncodedVideoUrl;
 }
 function decodeVideoUrlFromBase64(base64EncodedUrl) {
